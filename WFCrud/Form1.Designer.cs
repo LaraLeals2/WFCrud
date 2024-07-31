@@ -35,6 +35,10 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lstContato = new System.Windows.Forms.ListView();
+            this.lblBusca = new System.Windows.Forms.Label();
+            this.txtContato = new System.Windows.Forms.TextBox();
+            this.btnBusca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +99,50 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lstContato
+            // 
+            this.lstContato.HideSelection = false;
+            this.lstContato.Location = new System.Drawing.Point(329, 54);
+            this.lstContato.Name = "lstContato";
+            this.lstContato.Size = new System.Drawing.Size(589, 146);
+            this.lstContato.TabIndex = 7;
+            this.lstContato.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblBusca
+            // 
+            this.lblBusca.AutoSize = true;
+            this.lblBusca.Location = new System.Drawing.Point(326, 9);
+            this.lblBusca.Name = "lblBusca";
+            this.lblBusca.Size = new System.Drawing.Size(124, 20);
+            this.lblBusca.TabIndex = 8;
+            this.lblBusca.Text = "Buscar contato:";
+            // 
+            // txtContato
+            // 
+            this.txtContato.Location = new System.Drawing.Point(329, 28);
+            this.txtContato.Name = "txtContato";
+            this.txtContato.Size = new System.Drawing.Size(480, 22);
+            this.txtContato.TabIndex = 9;
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.Location = new System.Drawing.Point(815, 25);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(97, 23);
+            this.btnBusca.TabIndex = 10;
+            this.btnBusca.Text = "☺";
+            this.btnBusca.UseVisualStyleBackColor = true;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 207);
+            this.ClientSize = new System.Drawing.Size(924, 207);
+            this.Controls.Add(this.btnBusca);
+            this.Controls.Add(this.txtContato);
+            this.Controls.Add(this.lblBusca);
+            this.Controls.Add(this.lstContato);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefone);
@@ -123,6 +166,10 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ListView lstContato;
+        private System.Windows.Forms.Label lblBusca;
+        private System.Windows.Forms.TextBox txtContato;
+        private System.Windows.Forms.Button btnBusca;
     }
 }
 

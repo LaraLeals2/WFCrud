@@ -1,6 +1,6 @@
 
 # Visual Studio
-.vs/
+
 .vscode/
 *.suo
 *.user
@@ -46,3 +46,7 @@ ehthumbs.db
 *.snupkg
 packages/
 *.csproj.lock
+.vs/ 
+.vs/ 
+.vs/ 
+.vs/ 
