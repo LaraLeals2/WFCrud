@@ -7,6 +7,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.DocumentLayout.json
+*.FileContentIndex\735c5022-cf58-4ac1-ba02-be33dd5b0c99.vsidx
 
 # Rider
 .idea/
