@@ -30,17 +30,40 @@ namespace WFCrud
             {
                 _connection = new MySqlConnection(data_sourse);
 
-                string sql = "INSERT INTO contato ( nome, email, telefone) VALUES ('" + txtNome.Text + "','" + txtEmail.Text + "','" + txtTelefone.Text + "' )";
-
-                MySqlCommand comando = new MySqlCommand(sql, _connection);
-
                 _connection.Open();
-                comando.ExecuteReader();
-                MessageBox.Show("Sucesso!");
+
+                MySqlCommand cmd = new MySqlCommand();
+
+                cmd.Connection = _connection;
+
+                cmd.CommandText = "INSERT INTO contato ( nome, email, telefone)" +
+                                  " VALUES " +
+                                  "(@nome, @email, @telefone)";
+                cmd.Parameters.AddWithValue("@nome",txtNome.Text);
+                cmd.Parameters.AddWithValue("@email",txtEmail.Text);
+                cmd.Parameters.AddWithValue("@telefone",txtTelefone.Text);
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+                
+                MessageBox.Show($"Sucesso! {MessageBoxButtons.OK}, {MessageBoxIcon.Information} !");
+
+                /* string sql = "INSERT INTO contato ( nome, email, telefone) VALUES ('" + txtNome.Text + "','" + txtEmail.Text + "','" + txtTelefone.Text + "' )";
+
+                 MySqlCommand comando = new MySqlCommand(sql, _connection);
+
+                 _connection.Open();
+                 comando.ExecuteReader();
+                 MessageBox.Show("Sucesso!");*/
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show($"Erro: - {ex}, {ex.Message}!");
+                MessageBox.Show($"Erro: - {ex.Number} ocorreu: {ex.Message}, " +
+                    $"{MessageBoxButtons.OK} {MessageBoxIcon.Error} ");
+            }catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: - ocorreu: {ex.Message}, " +
+                    $"{MessageBoxButtons.OK}, {MessageBoxIcon.Error} !");
             }
             finally
             {
